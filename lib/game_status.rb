@@ -50,18 +50,3 @@ def over?(board)
      return true
    end
 end
-
-def win(player)
-    #horizontal wins
-    return true if (0..2).all? { |i| check(0, i, player) }
-    return true if (0..2).all? { |i| check(1, i, player) }
-    return true if (0..2).all? { |i| check(2, i, player) }
-    #vertical wins
-    return true if (0..2).all? { |i| check(i, 0, player) }
-    return true if (0..2).all? { |i| check(i, 1, player) }
-    return true if (0..2).all? { |i| check(i, 2, player) }
-    #diagonal wins
-    return true if (0..2).all? { |i| check(i, i, player) }
-    return true if (0..2).all? { |i| check(i, 2 - i, player) }
-  end
-end
